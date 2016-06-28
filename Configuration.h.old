@@ -58,9 +58,8 @@
 #define MOTHERBOARD 33
 #endif
 
-// Define this to set a custom name for your generic Mendel, 
-//Damien must be <13 characters
-#define CUSTOM_MENDEL_NAME "Damien rc1.04"
+// Define this to set a custom name for your generic Mendel,
+#define CUSTOM_MENDEL_NAME "Damien1 rc1.04"
 
 // This defines the number of extruders
 #define EXTRUDERS 1
@@ -90,8 +89,7 @@
 
 //CALIB
 // Horizontal offset from middle of printer to smooth rod center.
-// If the nozzle is above the surface and Z=0 then you need to increase DELTA_SMOOTH_ROD_OFFSET.
-#define DELTA_SMOOTH_ROD_OFFSET 146.4 // mm  MR: Changed from 152.0 (145.0)
+#define DELTA_SMOOTH_ROD_OFFSET 145.8 // mm  MR: Changed from 152.0 (145.0)
 
 // Horizontal offset of the universal joints on the end effector.
 #define DELTA_EFFECTOR_OFFSET 19.9 // mm  MR: Changed from 20.0
@@ -107,8 +105,8 @@
 //#define DEBUG_MESSAGES
 
 // Precision for G30 delta autocalibration function
-//#define AUTOCALIBRATION_PRECISION 0.03 // mm
-#define AUTOCALIBRATION_PRECISION 0.06 // mm //do this first for quick test. If ok, change to 0.03 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+#define AUTOCALIBRATION_PRECISION 0.03 // mm
+//#define AUTOCALIBRATION_PRECISION 0.06 // mm //do this first for quick test. If ok, change to 0.03 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 // Diameter of print bed - this is used to set the distance that autocalibration probes the bed at.
 #define BED_DIAMETER 150 // mm, MR changed from 170
 
@@ -119,10 +117,8 @@
 //original #define Z_PROBE_DEPLOY_END_LOCATION {5, 96, 30, 0} // X, Y, Z, E end location for z-probe deployment sequence
 //original #define Z_PROBE_RETRACT_START_LOCATION {49, 84, 20, 0}  // X, Y, Z, E start location for z-probe retract sequence
 //original #define Z_PROBE_RETRACT_END_LOCATION {49, 84, 1, 0}     // X, Y, Z, E end location for z-probe retract sequence 
-//Damien Change negative number to reflect the distance between probe trigger and extruder tip -5.6
-// damien: Mark probe 0,0 and then line up in probe and record offset...
-//#define Z_PROBE_OFFSET {0, 16, -5.7, 0}  // X, Y, Z, E distance between hotend nozzle and deployed bed leveling probe. <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-#define Z_PROBE_OFFSET {0, 16, -5.5, 0}  // X, Y, Z, E distance between hotend nozzle and deployed bed leveling probe. <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+//Damien Change negative number to refelct the distance between probe trigger and extruder tip -5.6
+#define Z_PROBE_OFFSET {0, 16, -5.8, 0}  // X, Y, Z, E distance between hotend nozzle and deployed bed leveling probe. <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 #define Z_PROBE_DEPLOY_START_LOCATION {23, 93, 20, 0}   // X, Y, Z, E start location for z-probe deployment sequence, MR changed from {23, 93, 20, 0}
 #define Z_PROBE_DEPLOY_END_LOCATION {3, 93, 20, 0}// X, Y, Z, E end location for z-probe deployment sequence, MR changed from {5, 93, 20, 0}
 #define Z_PROBE_RETRACT_START_LOCATION {-24, 94, 46, 0}  // X, Y, Z, E start location for z-probe retract sequence, MR changed from {-24, 94, 46, 0}
@@ -219,18 +215,9 @@
 
 // If you are using a pre-configured hotend then you can use one of the value sets by uncommenting it
 // Ultimaker
-//    #define  DEFAULT_Kp 22.2
-//    #define  DEFAULT_Ki 1.08
-//    #define  DEFAULT_Kd 114
-    
-// Damien: To run PID Autotune in Marlin and other firmares, run the following gcode with the nozzle cold:
-// M303 E0 S200 C8
-// default was Ulimaker above
-    #define  DEFAULT_Kp 16.85
-    #define  DEFAULT_Ki 1.27
-    #define  DEFAULT_Kd 56.05
-    
-    
+    #define  DEFAULT_Kp 22.2
+    #define  DEFAULT_Ki 1.08
+    #define  DEFAULT_Kd 114
 
 // Makergear
 //    #define  DEFAULT_Kp 7.0
@@ -388,14 +375,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 //Damien
 //Change to First Z stop
 // 4.1 e.g. 270-4.1 = 265.9
-// 3.8 ie 270-3.8 = 266.2 // will not be used once calibated, but useful to check delta to pin probe height
-//
-// Height set to 270....
-// hotbed jams paper at 3.8
-// Z pin prob is triggered at 9.29 (say 9.3)
-// delta is 9.29 - 3.8 = 5.49 (say 5.5)
-
-#define MANUAL_Z_HOME_POS 269  // MR: CHANGE HEIGHT OF PRINTER HERE! For delta: Distance between nozzle and print surface after homing.<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+#define MANUAL_Z_HOME_POS 270  // MR: CHANGE HEIGHT OF PRINTER HERE! For delta: Distance between nozzle and print surface after homing.<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 //// MOVEMENT SETTINGS
 #define NUM_AXIS 4 // The axis order in all axis related arrays is X, Y, Z, E
